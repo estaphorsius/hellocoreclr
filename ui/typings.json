@@ -1,17 +1,41 @@
 {
-  "name": "aspnet",
-  "version": false,
-  "dependencies": {},
-  "globalDependencies": {
-    "angular": "registry:dt/angular#1.5.0+20160922195358",
-    "angular-ui-router": "registry:dt/angular-ui-router#1.1.5+20160810191828",
-    "jquery": "registry:dt/jquery#1.10.0+20160929162922",
-    "toastr": "registry:dt/toastr#2.1.1+20160510010435"
+  "name": "hello-coreclr",
+  "dependencies": {
+    "aurelia-binding": "github:aurelia/binding",
+    "aurelia-bootstrapper": "github:aurelia/bootstrapper",
+    "aurelia-dependency-injection": "github:aurelia/dependency-injection",
+    "aurelia-dialog": "github:aurelia/dialog",
+    "aurelia-event-aggregator": "github:aurelia/event-aggregator",
+    "aurelia-fetch-client": "github:aurelia/fetch-client",
+    "aurelia-framework": "github:aurelia/framework",
+    "aurelia-history": "github:aurelia/history",
+    "aurelia-history-browser": "github:aurelia/history-browser",
+    "aurelia-http-client": "github:aurelia/http-client",
+    "aurelia-loader": "github:aurelia/loader",
+    "aurelia-logging": "github:aurelia/logging",
+    "aurelia-logging-console": "github:aurelia/logging-console",
+    "aurelia-metadata": "github:aurelia/metadata",
+    "aurelia-pal": "github:aurelia/pal",
+    "aurelia-pal-browser": "github:aurelia/pal-browser",
+    "aurelia-path": "github:aurelia/path",
+    "aurelia-polyfills": "github:aurelia/polyfills",
+    "aurelia-route-recognizer": "github:aurelia/route-recognizer",
+    "aurelia-router": "github:aurelia/router",
+    "aurelia-task-queue": "github:aurelia/task-queue",
+    "aurelia-templating": "github:aurelia/templating",
+    "aurelia-templating-binding": "github:aurelia/templating-binding",
+    "aurelia-templating-resources": "github:aurelia/templating-resources",
+    "aurelia-templating-router": "github:aurelia/templating-router",
+    "aurelia-testing": "github:aurelia/testing",
+    "aurelia-validation": "github:aurelia/validation"
   },
   "globalDevDependencies": {
-    "angular-mocks": "registry:dt/angular-mocks#1.5.0+20160608104721",
-    "chai": "registry:dt/chai#3.4.0+20160601211834",
-    "mocha": "registry:dt/mocha#2.2.5+20160720003353",
-    "sinon": "registry:dt/sinon#1.16.0+20160924120326"
+    "jasmine": "registry:dt/jasmine#2.2.0+20160505161446",
+    "node": "registry:dt/node",
+    "selenium-webdriver": "registry:dt/selenium-webdriver#2.44.0+20160317120654"
+  },
+  "globalDependencies": {
+    "bootstrap": "registry:dt/bootstrap#3.3.5+20160619023404",
+    "jquery": "registry:dt/jquery#1.10.0+20160929162922"
   }
 }

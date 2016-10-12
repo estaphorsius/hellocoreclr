@@ -1,14 +1,26 @@
-"use strict";
+import {Aurelia} from 'aurelia-framework'
+import environment from './environment';
 
-import { Config } from "./app/app.config";
-import { HelloWorldController } from "./app/greeting/helloworld.controller";
+//Configure Bluebird Promises.
+//Note: You may want to use environment-specific configuration.
+(<any>Promise).config({
+  warnings: {
+    wForgottenReturn: false
+  }
+});
 
-const main = angular.module("app", ["ui.router", "ui.bootstrap"])
-                 .constant("apiBaseUrl", "/api/")
-                 .config(Config)
-                 .controller("HelloWorldController", HelloWorldController);
+export function configure(aurelia: Aurelia) {
+  aurelia.use
+    .standardConfiguration()
+    .feature('resources');
 
-const name = main.name;
+  if (environment.debug) {
+    aurelia.use.developmentLogging();
+  }
 
-export default main;
-export { name }
+  if (environment.testing) {
+    aurelia.use.plugin('aurelia-testing');
+  }
+
+  aurelia.start().then(() => aurelia.setRoot());
+}

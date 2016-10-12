@@ -1,13 +1,14 @@
-"use strict";
+import {Redirect, NavigationInstruction, Router, RouterConfiguration} from 'aurelia-router';
 
-import angular from "angular";
-import "angular-bootstrap";
-import "angular-ui-router";
+export class App {
+    router: Router;
 
-import * as main from "./main";
+    configureRouter(config: RouterConfiguration, router: Router) {
+        config.title = 'Hello Core Clr!';
+        config.map([
+            { route: '', moduleId: 'greeting/greeting', name: 'home', settings: { roles: [] } }
+        ]);
 
-angular.element(document).ready(() => {
-  angular.bootstrap(document, [main.name], {
-    strictDi: true
-  });
-});
+        this.router = router;
+    }
+}
