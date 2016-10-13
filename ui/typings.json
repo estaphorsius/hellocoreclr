@@ -36,6 +36,7 @@
   },
   "globalDependencies": {
     "bootstrap": "registry:dt/bootstrap#3.3.5+20160619023404",
-    "jquery": "registry:dt/jquery#1.10.0+20160929162922"
+    "jquery": "registry:dt/jquery#1.10.0+20160929162922",
+    "toastr": "registry:dt/toastr#2.1.1+20160510010435"
   }
 }

@@ -2,19 +2,16 @@ import { HttpClient, HttpResponseMessage } from 'aurelia-http-client';
 import { LogManager } from 'aurelia-framework';
 import { Logger } from 'aurelia-logging';
 import { GetHelloWorldResponse } from './gethelloworldresponse';
-
+import * as toastr from 'toastr';
 export class Greeting {
-    static inject() { return [HttpClient, LogManager]; }
+    static inject() { return [HttpClient]; }
     private log: Logger;
     public labelText: string;
     public inputText: string;
 
-    constructor(private http: HttpClient, private logManager: LogManager) { 
-        this.log  = this.logManager.getLogger("greeting");
-    }
-
-    attached() {
-
+    constructor(private http: HttpClient) {
+        this.log = LogManager.getLogger("greeting");
+        this.SetToastrOptions();
     }
 
     public executeHelloWorld(): void {
@@ -26,7 +23,7 @@ export class Greeting {
         }
 
         this.log.info("We got the following name: " + name);
-        //toastr.info("Working...");
+        toastr.info("Working...");
 
         this.http.get('api/helloworld/' + name)
             .then((response: HttpResponseMessage) => {
@@ -34,17 +31,24 @@ export class Greeting {
                 if (response.isSuccess) {
                     this.log.info("Received data was: " + response.content.name);
 
-                    //toastr.clear();
-                    //toastr.success("HTTP/" + status);
+                    toastr.clear();
+                    toastr.success("HTTP/" + response.statusCode);
                     this.labelText = response.content.name;
                 }
                 else {
                     this.log.warn("Oops... something went wrong.");
 
-                    //toastr.clear();
-                    //toastr.warning("Oops... HTTP/" + status);
+                    toastr.clear();
+                    toastr.warning("Oops... HTTP/" + response.statusCode);
                     this.labelText = "";
                 }
             });
+    }
+
+        private SetToastrOptions(): void {
+        toastr.options.positionClass = "toast-bottom-right";
+        toastr.options.timeOut = 1500;
+        toastr.options.showDuration = 100;
+        toastr.options.hideDuration = 250;
     }
 }
