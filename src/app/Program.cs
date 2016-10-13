@@ -68,7 +68,7 @@ namespace HelloWorldApp
             var location = System.Reflection.Assembly.GetEntryAssembly().Location;
             location = location.Substring(0, location.LastIndexOf(Path.DirectorySeparatorChar));
                             
-            var webroot = Path.Combine(new []{location, "..", "..", "..", "..", "..", "ui", "wwwroot"});
+            var webroot = Path.Combine(new []{location, "..", "..", "..", "..", "..", "ui"});
             return Path.GetFullPath(webroot);
         }
     }
