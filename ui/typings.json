@@ -27,7 +27,9 @@
     "aurelia-templating-resources": "github:aurelia/templating-resources",
     "aurelia-templating-router": "github:aurelia/templating-router",
     "aurelia-testing": "github:aurelia/testing",
-    "aurelia-validation": "github:aurelia/validation"
+    "aurelia-validation": "github:aurelia/validation",
+    "chai": "registry:npm/chai#3.5.0+20160723033700",
+    "sinon": "registry:npm/sinon#1.16.0+20160723033700"
   },
   "globalDevDependencies": {
     "jasmine": "registry:dt/jasmine#2.2.0+20160505161446",

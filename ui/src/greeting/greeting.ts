@@ -14,12 +14,11 @@ export class Greeting {
         this.SetToastrOptions();
     }
 
-    public executeHelloWorld(): void {
+    public executeHelloWorld(): void { 
         let name = this.inputText;
         if (name === undefined || name.length === 0) {
             this.log.warn("No name received. abort.. ");
             this.labelText = "";
-            return;
         }
 
         this.log.info("We got the following name: " + name);
@@ -27,6 +26,7 @@ export class Greeting {
 
         this.http.get('api/helloworld/' + name)
             .then((response: HttpResponseMessage) => {
+                
                 this.log.info("Received http code " + response.statusCode);
                 if (response.isSuccess) {
                     this.log.info("Received data was: " + response.content.name);
@@ -45,7 +45,7 @@ export class Greeting {
             });
     }
 
-        private SetToastrOptions(): void {
+    private SetToastrOptions(): void {
         toastr.options.positionClass = "toast-bottom-right";
         toastr.options.timeOut = 1500;
         toastr.options.showDuration = 100;
